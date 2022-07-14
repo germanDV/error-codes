@@ -1,4 +1,10 @@
-export const pointErrorCodes = {
+export type PointErr = {
+  code: number;
+  name: string;
+  text: string;
+};
+
+export const pointErrorCodes: Record<number, PointErr> = {
   10: {
     code: 10,
     name: 'DEAD_ENGINE',
@@ -19,4 +25,4 @@ export const pointErrorCodes = {
     name: 'DDBB_FAILED_MIGRATION',
     text: 'Failed to run database migrations.',
   },
-} as const;
+};

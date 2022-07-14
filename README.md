@@ -12,13 +12,39 @@ With that said, the available ranges are:
 * 3-125 _(both included)_
 * 166-254 _(both included)_
 
+## Quick Start
+
+Install:
+```
+npm i germanDV/error-codes#main
+```
+
+After installation, the dependency in `package.json` should look like:
+```
+"point-error-codes": "github:germanDV/error-codes#main"
+```
+
+Import and use it:
+```
+import { pointErrorCodes } from 'point-error-codes'
+
+const err = pointErrorCodes[11]
+console.log(`Code: ${err.code}`)
+console.log(`Name: ${err.name}`)
+console.log(`Text: ${err.text}`)
+```
+
 ## Add New Code
 
-1. Add the new code to `index.ts`, making sure it is within the available ranges mentioned above.
+1. Add the new code to `src/index.ts` (tests will ensure it is within the available ranges).
 1. Run `yarn test`.
-1. Run `yarn build`
+1. Run `yarn build`.
 1. Run `yarn readme:update`.
 1. Commit and push your changes.
+
+## Docs
+
+This package has been bootstrapped with [tsdx](https://tsdx.io/).
 
 ## Error Codes
 

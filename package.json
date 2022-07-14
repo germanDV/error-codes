@@ -6,6 +6,7 @@
   "description": "Error codes for Point Network.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "module": "dist/point-error-codes.esm.js",
   "files": [
     "dist",
     "src"
@@ -14,17 +15,9 @@
     "node": ">=16"
   },
   "scripts": {
-    "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build"
-  },
-  "peerDependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
+    "readme:update": ""
   },
   "prettier": {
     "printWidth": 100,
@@ -32,9 +25,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "module": "dist/point-error-codes.esm.js",
   "devDependencies": {
-    "husky": "^8.0.1",
     "tsdx": "^0.14.1",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
