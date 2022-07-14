@@ -16,8 +16,9 @@ With that said, the available ranges are:
 
 1. Add the new code to `index.ts`, making sure it is within the available ranges mentioned above.
 1. Run `yarn test`.
+1. Run `yarn build`
 1. Run `yarn readme:update`.
-1. Push your changes.
+1. Commit and push your changes.
 
 ## Error Codes
 
