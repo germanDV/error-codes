@@ -1,9 +1,4 @@
 var pointErrorCodes = {
-  10: {
-    code: 10,
-    name: 'DEAD_ENGINE',
-    text: 'Unable to start Point Engine for unknown reasons.'
-  },
   11: {
     code: 11,
     name: 'INVALID_KEYFILE',

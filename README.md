@@ -28,15 +28,28 @@ Import and use it:
 ```
 import { pointErrorCodes } from 'point-error-codes'
 
-const err = pointErrorCodes[11]
-console.log(`Code: ${err.code}`)
-console.log(`Name: ${err.name}`)
-console.log(`Text: ${err.text}`)
+const n = process.env.N || 10
+const err = pointErrorCodes[+n]
+
+if (!err) {
+  console.log(`Point error code ${n} does not exist`)
+} else {
+  console.log(`[${err.code}] ${err.name} -> ${err.text}`)
+}
+```
+
+## Update
+
+This package is so simple that versioning and tagging seems a bit overkill.
+At least for now, the way to update it is to remove and reinstall:
+```
+npm rm germanDV/error-codes#main
+npm i germanDV/error-codes#main
 ```
 
 ## Add New Code
 
-1. Add the new code to `src/index.ts` (tests will ensure it is within the available ranges).
+1. Choose an available code and add it to `src/index.ts` (tests will ensure it is within the available ranges).
 1. Run `yarn test`.
 1. Run `yarn build`.
 1. Run `yarn readme:update`.
@@ -47,11 +60,8 @@ console.log(`Text: ${err.text}`)
 This package has been bootstrapped with [tsdx](https://tsdx.io/).
 
 ## Error Codes
-
-| code | name                 | text                                                   |
-| ---- | -------------------- | ------------------------------------------------------ |
-| 10   | DEAD_ENGINE | Unable to start Point Engine for unknown reasons. |
-| 11   | INVALID_KEYFILE | Keyfile has missing or invalid data. |
-| 12   | LOCKFILE_PRESENT | Unable to create lockfile, process must be already running. |
-| 13   | DDBB_FAILED_MIGRATION | Failed to run database migrations. |
-
+| code | name | text |
+| ---- | ---- | ---- |
+| 11 | INVALID_KEYFILE | Keyfile has missing or invalid data. |
+| 12 | LOCKFILE_PRESENT | Unable to create lockfile, process must be already running. |
+| 13 | DDBB_FAILED_MIGRATION | Failed to run database migrations. |
