@@ -20,4 +20,9 @@ export const pointErrorCodes: Record<number, PointErr> = {
     name: 'DDBB_FAILED_MIGRATION',
     text: 'Failed to run database migrations.',
   },
+  14: {
+    code: 14,
+    name: 'INVALID_CHECKSUM',
+    text: 'Checksum for downloaded file does not match the expected one.',
+  },
 };

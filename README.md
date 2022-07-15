@@ -65,3 +65,4 @@ This package has been bootstrapped with [tsdx](https://tsdx.io/).
 | 11 | INVALID_KEYFILE | Keyfile has missing or invalid data. |
 | 12 | LOCKFILE_PRESENT | Unable to create lockfile, process must be already running. |
 | 13 | DDBB_FAILED_MIGRATION | Failed to run database migrations. |
+| 14 | INVALID_CHECKSUM | Checksum for downloaded file does not match the expected one. |
