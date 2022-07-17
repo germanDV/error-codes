@@ -30,7 +30,7 @@ import { PointErrCodes } from 'point-error-codes'
 
 // Here we use it as a process exit code,
 // but it could also be sent in an API response,
-// or be used to instantiate custome Error classes and thrown.
+// or be used to instantiate custom Error classes and thrown.
 process.exit(PointErrCodes.INVALID_KEYFILE)
 ```
 
@@ -59,7 +59,7 @@ npm i germanDV/error-codes#main
 
 1. Choose an available code and add it to `src/index.ts` (tests will ensure it is within the available ranges).
 1. Run `yarn test`.
-1. Run `yarn build`.
+1. Run `yarn build` (_postbuild_ task will update the table at the bottom of this readme).
 1. Commit and push your changes.
 
 ## Docs
