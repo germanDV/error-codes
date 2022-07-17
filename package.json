@@ -15,9 +15,9 @@
     "node": ">=16"
   },
   "scripts": {
-    "build": "tsdx build",
     "test": "jest",
-    "readme:update": "node scripts/update-readme.js"
+    "build": "tsdx build",
+    "postbuild": "node scripts/update-readme.js"
   },
   "prettier": {
     "printWidth": 100,

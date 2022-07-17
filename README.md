@@ -24,17 +24,25 @@ After installation, the dependency in `package.json` should look like:
 "point-error-codes": "github:germanDV/error-codes#main"
 ```
 
-Import and use it:
+Generate an error:
+```typescript
+import { PointErrCodes } from 'point-error-codes'
+
+// Here we use it as a process exit code,
+// but it could also be sent in an API response,
+// or be used to instantiate custome Error classes and thrown.
+process.exit(PointErrCodes.INVALID_KEYFILE)
 ```
+
+Consume an error:
+```typescript
 import { pointErrorCodes } from 'point-error-codes'
 
-const n = process.env.N || 10
-const err = pointErrorCodes[+n]
-
-if (!err) {
-  console.log(`Point error code ${n} does not exist`)
-} else {
-  console.log(`[${err.code}] ${err.name} -> ${err.text}`)
+try {
+  // ...
+} catch (err) {
+  const pointErr = pointErrorCodes[err.code]
+  // ...
 }
 ```
 
@@ -52,7 +60,6 @@ npm i germanDV/error-codes#main
 1. Choose an available code and add it to `src/index.ts` (tests will ensure it is within the available ranges).
 1. Run `yarn test`.
 1. Run `yarn build`.
-1. Run `yarn readme:update`.
 1. Commit and push your changes.
 
 ## Docs
